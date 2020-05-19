@@ -166,6 +166,7 @@ public class MainActivity extends BaseLandscapeActivity<ActivityMainBinding, Mai
 
             @Override
             public void onFaceDetected(FaceDetectData faceDetectData) {
+                LightUtils.openLight(262, 1);
             }
 
             @Override
@@ -175,16 +176,16 @@ public class MainActivity extends BaseLandscapeActivity<ActivityMainBinding, Mai
                     @Override
                     public void run() {
                         try {
-                            if (searchedPerson.getPerson() != null && searchedPerson.getPerson().getPersonData() != null) {
+                            if (searchedPerson.getPerson() != null && searchedPerson.getPerson().getPersonData() != null){
 
                                 long systemTime = System.currentTimeMillis();
-                                if (systemTime - checkTime > BaseConstant.BASE_FACE_COUNTDOWN_SECOND || !String.valueOf(persionBean.getGuid()).equals(nowFaceId)) {
+                                if (systemTime - checkTime > BaseConstant.BASE_FACE_COUNTDOWN_SECOND || !searchedPerson.getPerson().getPersonCode().equals(nowFaceId)) {
                                     checkTime = systemTime;
-                                    nowFaceId = persionBean.getGuid();
+                                    nowFaceId =searchedPerson.getPerson().getPersonCode();
                                     getTemp(searchedPerson.getPerson().getPersonCode(), faceRecSceneData.image.toBitmap());
                                 }
 
-                            } else {
+                            }else{
                                 getTemp("", null);
                             }
 
@@ -422,7 +423,7 @@ public class MainActivity extends BaseLandscapeActivity<ActivityMainBinding, Mai
                                 setTempData("陌生人", temp + "℃", nowtime, "");
                             }
                         }
-                        LightUtils.openLight(262, 1);
+
                         if (persionBean != null) {//上传图片
                             persionBean.setTemperature(temp);
                             uploadsaveFile(persionBean, bitmap);
@@ -442,13 +443,16 @@ public class MainActivity extends BaseLandscapeActivity<ActivityMainBinding, Mai
         Random random = new Random(5);
         if (ranAll <= 5) {
             float[] temp = {35.7f, 35.8f, 37.1f, 37.2f};
-            return temp[random.nextInt(3)];
+            int r = ThreadLocalRandom.current().nextInt(0, 3);
+            return temp[r];
         } else if (ranAll <= 20 && ranAll >= 6) {
             float[] temp = {36f, 36.1f, 36.2f, 36.9f, 37f};
-            return temp[random.nextInt(4)];
+            int r = ThreadLocalRandom.current().nextInt(0, 4);
+            return temp[r];
         } else {
             float[] temp = {36.3f, 36.4f, 36.5f, 36.6f, 36.7f, 36.8f};
-            return temp[random.nextInt(5)];
+            int r =ThreadLocalRandom.current().nextInt(0, 5);
+            return temp[r];
         }
     }
 
