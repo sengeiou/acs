@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">libary_base</string>
+
+    <string name="check_on_total">人数： %1$d人</string>
+    <string name="check_on_clock">出勤： %1$d人</string>
+    <string name="check_on_leave">请假： %1$d人</string>
+    <string name="check_on_late">迟到： %1$d人</string>
+    <string name="check_on_nocome">未到： %1$d人</string>
+    <string name="check_on_version">版本： %1$s</string>
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp">
+
+    <com.tifenbao.base.view.ShadowLayout
+        android:id="@+id/shadow_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:sl_shadow_angle="70"
+        app:sl_shadow_color="@color/gray"
+        app:sl_shadow_distance="4dp"
+        app:sl_shadow_padding="4dp"
+        app:sl_shadow_radius="2dp">
+
+        <LinearLayout
+            android:id="@+id/status_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dialog_grey_side_white_radius20"
+            android:orientation="horizontal">
+
+            <com.tifenbao.base.view.ScalableImageView
+                android:id="@+id/pic"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="2dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+                android:id="@+id/status_layout"
+                android:layout_width="33dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="2.2dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/signbook_grey_img"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="1"
+                    android:text="迟到"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </com.tifenbao.base.view.ShadowLayout>
+
+</LinearLayout>

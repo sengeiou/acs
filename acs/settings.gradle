@@ -1,0 +1,4 @@
+rootProject.name='acs'
+include ':app', ':mvvmhabit', ':lib-temperature', ':library-base', ':facemanager'
+include ':lib-speech'
+include ':lib-light'

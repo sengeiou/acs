@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            if (isBuildModule.toBoolean()) {
+            } else {
+                resources {
+                    //正式版本时，排除debug文件夹下所有调试文件
+                    exclude 'src/debug/*'
+                }
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    defaultConfig {
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+
+    sourceSets { main { assets.srcDirs = ['src/assets', 'src/assets/'] } }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //公用的support相关库在base中依赖
+    api rootProject.ext.support["design"]
+    api rootProject.ext.support["appcompat-v7"]
+    //公用资源在base中依赖
+//    api project(':library-res')
+    //核心基础库
+    api project(':mvvmhabit')
+    //人脸识别库
+    api project(':facemanager')
+    //阿里路由框架
+    api rootProject.ext.dependencies["arouter-api"]
+    //温控库
+    api project(':lib-temperature')
+    //语音库
+    api project(':lib-speech')
+    //灯光库
+    api project(':lib-light')
+
+    api 'com.android.support:multidex:1.0.3'
+
+    api files('libs/xUtils-lgt-v1.0.jar')
+
+    implementation 'org.simple:androideventbus:1.0.5.1'
+
+    api 'com.tencent.bugly:crashreport:latest.release'
+    api 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号
+}

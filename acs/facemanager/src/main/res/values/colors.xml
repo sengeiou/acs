@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //--------------------人脸
+    <color name="c_zq_blue">#3e84f2</color>
+    <color name="c_zq_write">#FFFFFF</color>
+
+</resources>

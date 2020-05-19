@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="base_bg_color">#F6F4F8</color>
+    <color name="base_bg_card_color">#FFFFFF</color>
+    <color name="base_line">#EBE9EC</color>
+
+    <color name="bbt_blue">#0b71d7</color>
+    <color name="bbt_blue2">#10BFED</color>
+    <color name="bbt_blue3">#099CD6</color>
+    <color name="bbt_blue4">#37BFF5</color>
+    <color name="bbt_blue5">#C0CCE0</color>
+    <color name="bbt_blue6">#1f5cb9</color>
+    <color name="bbt_blue7">#03b7ec</color>
+    <color name="bbt_blue8">#459aee</color>
+
+    <color name="bbt_purple">#B664E5</color>
+
+    <color name="bbt_orange">#FF9D40</color>
+    <color name="bbt_orange2">#FEBD47</color>
+    <color name="bbt_orange3">#FFAB24</color>
+    <color name="bbt_orange4">#FDDA33</color>
+    <color name="bbt_orange5">#FF6B1C</color>
+
+    <color name="bbt_yellow">#FFFF40</color>
+    <color name="bbt_yellow2">#edc832</color>
+
+    <color name="bbt_red">#F06868</color>
+    <color name="bbt_red2">#e75252</color>
+    <color name="bbt_red3">#FF3119</color>
+
+    <color name="bbt_green">#52c41a</color>
+
+    <color name="bbt_white2">#FFFCE4</color>
+
+    <color name="bbt_translucent_grey">#40000000</color>
+    <color name="bbt_translucent">#70000000</color>
+    <color name="bbt_translucent_blue">#700A6DD1</color>
+
+    <color name="bbt_black">#212D44</color>
+    <color name="bbt_black2">#131D33</color>
+
+    <color name="bbt_gray2">#6a6a6a</color>
+    <color name="bbt_gray3">#8d8d8d</color>
+    <color name="bbt_gray4">#0761b9</color>
+</resources>

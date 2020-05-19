@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+          <android.support.constraint.ConstraintLayout
+              android:id="@+id/constraintLayout"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:layout_gravity="center_horizontal"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent">
+
+              <SurfaceView
+                  android:id="@+id/surface"
+                  android:layout_width="631dp"
+                  android:layout_height="471dp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  />
+
+              <com.tifenbao.zqznface.FaceBoxView
+                  android:id="@+id/face_box_view"
+                  android:layout_width="631dp"
+                  android:layout_height="471dp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  />
+          </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
